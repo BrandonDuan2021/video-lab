@@ -1,0 +1,7 @@
+opencv-python
+numpy
+librosa
+scenedetect[opencv]
+matplotlib
+yt-dlp
+mlx-whisper ; platform_machine == "arm64" and sys_platform == "darwin"
