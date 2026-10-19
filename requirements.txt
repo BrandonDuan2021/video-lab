@@ -1,7 +1,16 @@
-opencv-python
+# 必需
+opencv-python>=4.8,<5        # 5.0 把 Haar 人脸检测挪出了主包
 numpy
-librosa
-scenedetect[opencv]
 matplotlib
 yt-dlp
-mlx-whisper ; platform_machine == "arm64" and sys_platform == "darwin"
+
+# 推荐（缺了会跳过对应步骤，report.md 里会写明）
+scenedetect                  # 切镜头（没有就用内置算法）
+librosa                      # 节拍 / 起音 / 音效
+pyloudnorm                   # 响度 LUFS
+mlx-whisper ; platform_machine == "arm64" and sys_platform == "darwin"   # 转录
+ocrmac ; sys_platform == "darwin"                                         # 屏幕文字
+
+# 可选（慢，但更细）
+# demucs                     # 分轨：闪避 / 音效检测需要它
+# whisperx                   # 逐字时间戳更准（J/L-cut 判断更可靠）
